@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Sign in | Agent Store Seller Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Deliberately self-contained. This page has to render for someone the
+         app will not serve a bundle to, so it cannot depend on /assets. */
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 40px;
+        background: #fff;
+        color: #43434c;
+        font-family: Poppins, "Century Gothic", "Trebuchet MS", sans-serif;
+        font-size: 14px;
+        line-height: 1.62;
+      }
+      .box {
+        max-width: 48ch;
+      }
+      img {
+        height: 26px;
+        margin-bottom: 34px;
+      }
+      h1 {
+        margin: 0 0 14px;
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 1.1;
+        color: #141414;
+      }
+      h1 span {
+        color: #c0008d;
+      }
+      p {
+        margin: 0 0 12px;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 13px 24px;
+        border-radius: 999px;
+        background: #c0008d;
+        color: #fff;
+        font-size: 13.5px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .quiet {
+        display: inline-block;
+        margin: 18px 0 0 16px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #43434c;
+      }
+      .small {
+        margin-top: 30px;
+        font-size: 11px;
+        color: #8a8a94;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="/org-of-the-future/brand/insight-logo.png" alt="Insight" />
+
+      <!-- Two states, one page. Static Web Apps returns 401 both for a visitor
+           who is not signed in and for one who is signed in without the role,
+           so a single 401 redirect straight to the sign-in page would loop
+           forever for the second group. This page reads /.auth/me and says
+           which of the two has happened. -->
+      <div id="out" hidden>
+        <h1>This is an <span>internal Insight tool.</span></h1>
+        <p>
+          The Agent Store Seller Hub is for Insight Canada sellers and pre-sales.
+          Sign in with your Insight account to continue.
+        </p>
+        <a class="cta" href="/.auth/login/aad?post_login_redirect_uri=/">
+          Sign in with Insight
+        </a>
+      </div>
+
+      <div id="in" hidden>
+        <h1>You are signed in, <span>but not on the list yet.</span></h1>
+        <p>
+          Access is granted per person during the September pilot. You are signed
+          in as <strong id="who">your account</strong>.
+        </p>
+        <p>
+          Ask Anna Jabbari or Sunny Wang to add you, then reload. If that is a
+          personal Microsoft account rather than your Insight one, sign out and
+          sign in again.
+        </p>
+        <a class="cta" href="/.auth/logout?post_logout_redirect_uri=/">Sign out</a>
+        <a class="quiet" href="/">Try again</a>
+      </div>
+
+      <p class="small">
+        Insight Proprietary &amp; Confidential. Do Not Copy or Distribute.
+        &copy; 2026 Insight. All Rights Reserved.
+      </p>
+    </div>
+
+    <script>
+      // Default to the signed-out view if the identity endpoint is unreachable:
+      // offering a sign-in button to someone already signed in is a dead end
+      // they can escape, whereas the reverse is a page with no way forward.
+      fetch("/.auth/me")
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (d) {
+          var p = d && d.clientPrincipal;
+          if (p) {
+            document.getElementById("who").textContent =
+              p.userDetails || "your account";
+            document.getElementById("in").hidden = false;
+          } else {
+            document.getElementById("out").hidden = false;
+          }
+        })
+        .catch(function () {
+          document.getElementById("out").hidden = false;
+        });
+    </script>
+  </body>
+</html>

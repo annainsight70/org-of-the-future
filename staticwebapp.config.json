@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/no-access.html",
+      "allowedRoles": ["anonymous", "authenticated"]
+    },
+    {
+      "route": "/robots.txt",
+      "allowedRoles": ["anonymous", "authenticated"]
+    },
+    {
+      "route": "/brand/*",
+      "allowedRoles": ["anonymous", "authenticated"],
+      "headers": {
+        "cache-control": "public, max-age=604800"
+      }
+    },
+    {
+      "route": "/favicon.svg",
+      "allowedRoles": ["anonymous", "authenticated"]
+    },
+    {
+      "route": "/.auth/login/github",
+      "statusCode": 404
+    },
+    {
+      "route": "/assets/*",
+      "allowedRoles": ["seller"],
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/videos/*",
+      "allowedRoles": ["seller"],
+      "headers": {
+        "cache-control": "public, max-age=604800"
+      }
+    },
+    {
+      "route": "/",
+      "rewrite": "/seller.html",
+      "allowedRoles": ["seller"]
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["seller"]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/no-access.html"
+    }
+  },
+  "mimeTypes": {
+    ".webm": "video/webm",
+    ".mp4": "video/mp4",
+    ".svg": "image/svg+xml"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Robots-Tag": "noindex, nofollow"
+  },
+  "navigationFallback": {
+    "rewrite": "/seller.html",
+    "exclude": [
+      "/assets/*",
+      "/videos/*",
+      "/photos/*",
+      "/people/*",
+      "/brand/*",
+      "/*.{css,js,png,jpg,jpeg,svg,webp,ico,mp4,webm,json,txt}"
+    ]
+  }
+}

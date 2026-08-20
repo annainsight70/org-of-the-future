@@ -1,0 +1,4 @@
+# Internal pre-sales tool. Nothing here is for indexing.
+# The public Agent Store page is marketing's, on the Insight website.
+User-agent: *
+Disallow: /
