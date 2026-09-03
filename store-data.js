@@ -267,36 +267,6 @@ export const seller = {
   ],
   refNote: 'Reference approvals for these accounts have no owner and no date in Table A of the launch plan. Suggested owner date 22 August. Until each one is approved, use the sector wording in every external setting, including verbal.',
   sowNote: 'TBD: scrub SOWs are pending upload. Anna Jabbari supplies the full offerings list and the SOW set once the Azure-hosted site is stood up. Access is pre-sales only.',
-  // Section 03 — the conversation. Generic across floors: qualify the account,
-  // run the first call, then earn the architecture session.
-  entrySignalsLede: 'Prioritize accounts where you see one or more of the following:',
-  entrySignals: [
-    'An AI or Copilot pilot that never reached production',
-    'A backlog of agent ideas without a delivery path',
-    'Growing AI licences but limited evidence of business impact',
-    'A named executive sponsor looking for a visible AI win',
-    'A recurring manual process affecting cost, capacity, service, or decision speed',
-    'A prior AI, data, cloud, security, PRISM, Horizon, or Flight Academy engagement',
-    'Interest generated through an Agent Store demo, campaign, or event'
-  ],
-  entrySignalsNote: 'The existing sales guidance treats a stalled pilot, an executive sponsor, active AI investment, and a clearly named use case as the strongest qualification cues.',
-  firstCall: [
-    { head: 'Open with pressure', body: '"A lot of clients have invested in AI and generated plenty of ideas, but very few have a repeatable path into production. Where are you seeing that gap?"', bullets: [] },
-    { head: 'Find the stuck use case', body: 'Ask what the business has already attempted, where it stalled, and who cares enough to fix it.', bullets: [] },
-    { head: 'Establish the outcome', body: 'Agree on what would change if the use case worked:', bullets: ['Time returned', 'Faster decisions', 'Lower operating cost', 'Reduced risk', 'Better customer or employee service', 'Increased capacity', 'Greater accountability for AI spend'] },
-    { head: 'Show one relevant solution', body: 'Choose the closest Agent Store example. Use it to demonstrate that Insight understands the pattern, not to imply that the client will receive an identical deployment.', bullets: [] },
-    { head: 'Secure the next meeting', body: 'Bring in the appropriate architect or agent delivery lead to validate:', bullets: ['Business value', 'Data access', 'Integration requirements', 'Security and governance', 'Delivery approach', 'Funding eligibility', 'Production readiness'] }
-  ],
-  firstCallNote: 'The seller-enablement decks recommend a pressure, then outcome, then path conversation: diagnose what is stuck, define the desired business result, and then earn an architecture or scoping session.',
-  sellerRule: 'Do not try to close an agent on the first call. Close the next conversation around a qualified business problem.',
-  probeGroups: [
-    { head: 'Business problem', items: ['What process is creating the most friction for the business today?', 'Where are employees still moving information between reports, inboxes, spreadsheets, and systems by hand?', 'Which decisions take too long because leaders cannot get a trusted answer quickly?', 'If you could remove one recurring task from a team this quarter, which one would have the greatest impact?', 'Which part of the business is actively asking for AI help today?'] },
-    { head: 'Existing AI activity', items: ['Which AI or agent ideas have your teams already explored?', 'How many have reached production and are being used by the business?', 'Which experiment came closest to production, and what stopped it?', 'Where have you already invested in Copilot, Gemini, Azure, data, or other AI platforms?', 'Can leadership see a measurable return from that investment?'] },
-    { head: 'Ownership and readiness', items: ['Who owns the agent backlog today: IT, the business, or a shared AI team?', 'Who would sponsor the first production use case?', 'Who would own the agent after launch?', 'Does your current team have the capacity to build, secure, monitor, and maintain agents?', 'What security, privacy, or compliance requirements need to be addressed before production?'] },
-    { head: 'Value and urgency', items: ['What would a successful outcome look like in measurable terms?', 'What does the current process cost in time, delay, rework, or risk?', 'What happens if the problem remains unresolved for another six months?', 'Is there an executive commitment, renewal, budget cycle, or operational event creating urgency?', 'If you could put one agent into live business use first, which use case would you choose?'] },
-    { head: 'Expansion questions', items: ['If the first agent works, which adjacent workflows would you tackle next?', 'Would you rather build an internal capability, use an ongoing Insight team, or combine both?', 'What data or platform modernization would make future agents easier to deploy?', 'How do you want to govern agents built by different teams or vendors?', 'Would a reusable roadmap be more valuable than treating every agent as a separate project?'] }
-  ],
-  probeGroupsNote: 'These questions build on the existing discovery guidance, which focuses on production status, stalled experiments, ownership, platform footprint, measurable return, and the next priority use case.',
   objections: [
     { q: 'We already have Claude, ChatGPT Enterprise, or Copilot.', say: 'That is a strong starting point. The next question is whether you are getting measurable business outcomes from it. Agent Store solutions help clients identify a proven use case, put the required data, workflow, security, and adoption around it, and move it into production.', redirect: 'Which Copilot use case has the clearest executive interest but has not reached production?' },
     { q: 'We can build this ourselves.', say: 'That may be the right long-term model. Insight can help you accelerate the first production use case, transfer proven design and delivery practices, and leave your team with a repeatable approach rather than long-term dependency.', redirect: 'Where would outside experience reduce risk or help your team move faster?' },

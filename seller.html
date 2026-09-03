@@ -410,13 +410,13 @@ a:hover{color:var(--ins-magenta-deep)}
 .shbar .barnav a:hover{color:var(--ins-magenta)}
 
 /* Eyebrows → DS weight + tracking */
-.hero .eyebrow,.what .eyebrow,.risk .eyebrow,.start .eyebrow,.obj .eyebrow,.ways .eyebrow{font-weight:700;letter-spacing:.13em}
+.hero .eyebrow,.what .eyebrow,.risk .eyebrow,.obj .eyebrow,.ways .eyebrow{font-weight:700;letter-spacing:.13em}
 
 /* Buttons → DS pills (magenta primary, purple/lavender ghost). Scoped away from #measure. */
-.shbar .cta.solid,.hero .cta.solid,.what .cta.solid,.start .cta.solid,.ways .cta.solid{background:var(--ins-magenta);color:#fff;box-shadow:none;font-weight:600;border:1.5px solid transparent;transition:all .18s var(--ease)}
-.shbar .cta.solid:hover,.hero .cta.solid:hover,.what .cta.solid:hover,.start .cta.solid:hover,.ways .cta.solid:hover{background:var(--ins-magenta-deep);transform:translateY(-1px)}
-.hero .cta.ghost,.what .cta.ghost,.start .cta.ghost,.ways .cta.ghost{color:var(--ins-purple);border:1.5px solid var(--ins-lavender);font-weight:600}
-.hero .cta.ghost:hover,.what .cta.ghost:hover,.start .cta.ghost:hover,.ways .cta.ghost:hover{background:var(--ins-lavender);border-color:var(--ins-lavender);color:var(--ins-purple);transform:translateY(-1px)}
+.shbar .cta.solid,.hero .cta.solid,.what .cta.solid,.ways .cta.solid{background:var(--ins-magenta);color:#fff;box-shadow:none;font-weight:600;border:1.5px solid transparent;transition:all .18s var(--ease)}
+.shbar .cta.solid:hover,.hero .cta.solid:hover,.what .cta.solid:hover,.ways .cta.solid:hover{background:var(--ins-magenta-deep);transform:translateY(-1px)}
+.hero .cta.ghost,.what .cta.ghost,.ways .cta.ghost{color:var(--ins-purple);border:1.5px solid var(--ins-lavender);font-weight:600}
+.hero .cta.ghost:hover,.what .cta.ghost:hover,.ways .cta.ghost:hover{background:var(--ins-lavender);border-color:var(--ins-lavender);color:var(--ins-purple);transform:translateY(-1px)}
 
 /* Hero — DS kicker (ring-dot), display headline, gradient key line */
 .hero .kicker{border:0;padding:0;color:var(--ink);letter-spacing:.13em;font-size:12px}
@@ -426,7 +426,7 @@ a:hover{color:var(--ins-magenta-deep)}
 .hero .dates strong{color:var(--ins-magenta)}
 
 /* Section titles → DS heading rhythm */
-.what .stitle,.start .stitle,.obj .stitle{font-weight:700;letter-spacing:-.03em;line-height:1.08}
+.what .stitle,.obj .stitle{font-weight:700;letter-spacing:-.03em;line-height:1.08}
 
 /* "What is it" — proof column + talk-track box as DS proof blocks */
 .what .track{border:1px solid var(--line);border-left:3px solid var(--ins-magenta);border-radius:var(--r);background:linear-gradient(90deg,rgba(237,225,248,.4),transparent 60%)}
@@ -443,12 +443,6 @@ a:hover{color:var(--ins-magenta-deep)}
 .risk .counters span{color:var(--body)}
 .risk .counters em{color:var(--muted)}
 
-/* Start — chips as DS pills */
-.start .chip{background:var(--ins-lavender);color:var(--ins-purple);border:0;border-radius:999px;font-weight:600;padding:11px 21px;font-size:14.5px;transition:all .18s var(--ease)}
-.start .chip:hover{background:var(--ins-lavender-hover)}
-.start .chip.on{background:var(--ins-purple);color:#fff}
-.start .proof{border-left:3px solid var(--ins-magenta);padding:6px 0 6px 20px;background:linear-gradient(90deg,rgba(237,225,248,.42),transparent 55%);list-style:none;display:grid;gap:9px;margin:0}
-
 /* Objection accordion → DS hairlines + magenta active */
 .obj .qa{border-top:1px solid var(--line)}
 .obj .qa li{border-bottom:1px solid var(--line)}
@@ -459,19 +453,6 @@ a:hover{color:var(--ins-magenta-deep)}
 .ways .waylist li{border-radius:var(--r);border:1px solid var(--line);transition:box-shadow .2s var(--ease),transform .2s var(--ease)}
 .ways .waylist li:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-2px)}
 .ways .routing{border:1px solid var(--line);border-radius:var(--r)}
-
-/* Start — first-call motion and grouped probing questions */
-.start .uni .scare{margin:0 0 4px}
-.start .srcnote{color:var(--muted);font-size:11.5px;line-height:1.6;margin:12px 0 0;max-width:96ch}
-.start .motion{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr))}
-.start .mstep{border:1.5px solid var(--line);border-radius:var(--r);padding:18px 20px 20px}
-.start .mstep-h{display:flex;align-items:flex-start;gap:11px;margin:0;color:var(--ink);font-size:14px;font-weight:700;line-height:1.4}
-.start .mstep-h>span:first-child{background:var(--pink);color:var(--mag);width:20px;height:20px;border-radius:999px;flex:none;display:flex;justify-content:center;align-items:center;margin-top:1px;font-size:11.5px;font-weight:700}
-.start .mstep-b{margin:9px 0 0;font-size:12.5px;line-height:1.6}
-.start .mstep .proof{margin-top:12px}
-.start .probegrid{display:grid;gap:26px 30px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));margin-top:14px;align-items:start}
-.start .probes li{align-items:flex-start;color:var(--ink);display:flex;font-size:12.5px;gap:10px;line-height:1.5}
-.start .probes li>span:first-child{font-size:11px;font-weight:700;display:flex}
 
 @media (max-width:760px){.seller .hero .quiet[style]{margin-top:18px!important}.seller .what .cta.solid[style]{margin-right:0!important}.seller .risk .cta.solid[style]{margin-left:0!important}.seller section.ways[style]{margin-top:40px!important}}
 </style>
@@ -485,8 +466,8 @@ a:hover{color:var(--ins-magenta-deep)}
       <a href="#what">Why Agent Store?</a>
       <a href="#catalog">What's in Agent Store?</a>
       <a href="#measure">Where do I start?</a>
-      <a href="#start">Objection handling</a>
-      <a href="#faq">Contact</a>
+      <a href="#faq">Objection handling</a>
+      <a href="#support">Contact</a>
     </nav>
   </header>
   <p class="notice" role="note"><svg sc-camel-view-box="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"></path><path d="M10 21.4h4"></path><path d="M12 2.6a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2h5c.1-.8.5-1.5 1.1-2A6 6 0 0 0 12 2.6z"></path></svg>Internal sales playbook for the September preview of Agent Store. Please do not screen-share with customers.</p>
@@ -690,65 +671,10 @@ a:hover{color:var(--ins-magenta-deep)}
     </aside>
     
   </section>
-  <section class="start" id="start">
-    <div class="shead">
-      <div>
-        <p class="eyebrow snum"><span>03</span>part three</p>
-        <h2 class="stitle">Start with the customer, not the catalog</h2>
-        <p class="lede">Try not to lead with a tour of every agent. Look for a pressure point or an issue that matters to the customer.</p>
-      </div>
-      
-    </div>
-    <div class="uni">
-      <p class="eyebrow">BEST ENTRY SIGNALS</p>
-      <p class="scare">{{ entryLede }}</p>
-      <ol class="unil">
-        <sc-for list="{{ entrySignals }}" as="e" hint-placeholder-count="7">
-          <li><span>{{ e.n }}</span>{{ e.text }}</li>
-        </sc-for>
-      </ol>
-      <p class="srcnote">{{ entryNote }}</p>
-    </div>
-    <h3 class="sub">The recommended first-call motion</h3>
-    <ol class="motion">
-      <sc-for list="{{ firstCall }}" as="f" hint-placeholder-count="5">
-        <li class="mstep">
-          <p class="mstep-h"><span>{{ f.n }}</span>{{ f.head }}</p>
-          <p class="mstep-b">{{ f.body }}</p>
-          <sc-if value="{{ f.hasBullets }}" hint-placeholder-val="{{ true }}">
-            <ul class="proof small">
-              <sc-for list="{{ f.bullets }}" as="fb" hint-placeholder-count="3">
-                <li>{{ fb }}</li>
-              </sc-for>
-            </ul>
-          </sc-if>
-        </li>
-      </sc-for>
-    </ol>
-    <p class="srcnote">{{ firstCallNote }}</p>
-    <div class="flagbox">
-      <p class="eyebrow">Seller rule</p>
-      <p>{{ sellerRule }}</p>
-    </div>
-    <h3 class="sub">Probing questions</h3>
-    <div class="probegrid">
-      <sc-for list="{{ probeGroups }}" as="g" hint-placeholder-count="5">
-        <div class="scol">
-          <p class="eyebrow">{{ g.head }}</p>
-          <ol class="probes">
-            <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="5">
-              <li><span>{{ p.n }}</span>{{ p.text }}</li>
-            </sc-for>
-          </ol>
-        </div>
-      </sc-for>
-    </div>
-    <p class="srcnote">{{ probeNote }}</p>
-  </section>
   <section class="obj" id="faq">
     <div class="shead">
       <div>
-        <p class="eyebrow snum"><span>04</span>PART FOUR</p>
+        <p class="eyebrow snum"><span>03</span>PART THREE</p>
         <h2 class="stitle">Objection Handling FAQ</h2>
         <p class="lede">Seven objections, the response that works, and the question that moves the conversation forward.</p>
       </div>
@@ -775,10 +701,10 @@ a:hover{color:var(--ins-magenta-deep)}
     </ul>
   </section>
   
-  <section class="ways" style="margin-top:3.5cm">
+  <section class="ways" id="support" style="margin-top:3.5cm">
     <div class="shead">
       <div>
-        <p class="eyebrow snum"><span>05</span>Get support</p>
+        <p class="eyebrow snum"><span>04</span>Get support</p>
         <h2 class="stitle">Contact Help</h2>
       </div>
     </div>
@@ -860,7 +786,7 @@ class Component extends DCLogic {
   }
   renderVals() {
     const m = this.state.data, { active, open, modal } = this.state;
-    const empty = { floors: [], active, setActive: this.setActive, iconsMap: {}, badgeColors: [], catalog: [], agents: [], solves: [], demos: [], hasDemos: false, noDemos: false, kpiRows: [], kpiSupporting: [], offerings: [], external: [], refs: [], hasRefs: false, entrySignals: [], firstCall: [], probeGroups: [], questions: [], guard: [], modalOpen: false, closeModal: () => {}, stopClick: () => {}, depName: '', depPhoto: 'people/sec.png', photoBg: '#FAE0F1', floorNum: '', floorCount: '', persona: '', relevance: '', cares: '', runsOn: '', kpiAgent: '', sowLabel: '', sowHref: '', smeHref: '', entryLede: '', entryNote: '', firstCallNote: '', sellerRule: '', probeNote: '', modalName: '', modalKind: '', modalText: '' };
+    const empty = { floors: [], active, setActive: this.setActive, iconsMap: {}, badgeColors: [], catalog: [], agents: [], solves: [], demos: [], hasDemos: false, noDemos: false, kpiRows: [], kpiSupporting: [], offerings: [], external: [], refs: [], hasRefs: false, questions: [], guard: [], modalOpen: false, closeModal: () => {}, stopClick: () => {}, depName: '', depPhoto: 'people/sec.png', photoBg: '#FAE0F1', floorNum: '', floorCount: '', persona: '', relevance: '', cares: '', runsOn: '', kpiAgent: '', sowLabel: '', sowHref: '', smeHref: '', modalName: '', modalKind: '', modalText: '' };
     if (!m) return empty;
     const deps = m.departments, s = m.seller;
     const dep = deps.find(d => d.id === active);
@@ -889,12 +815,6 @@ class Component extends DCLogic {
       external: cdep?.proof ?? [],
       refs: (per?.references ?? []).map(r => ({ ...r, flagClass: r.approved ? 'live' : 'beta', flagLabel: r.approved ? 'Approved' : 'Not approved' })),
       hasRefs: (per?.references ?? []).length > 0,
-      entryLede: s.entrySignalsLede, entryNote: s.entrySignalsNote,
-      entrySignals: s.entrySignals.map((t, i) => ({ n: i + 1, text: t })),
-      firstCall: s.firstCall.map((f, i) => ({ ...f, n: i + 1, hasBullets: f.bullets.length > 0 })),
-      firstCallNote: s.firstCallNote, sellerRule: s.sellerRule,
-      probeGroups: s.probeGroups.map(g => ({ head: g.head, items: g.items.map((t, i) => ({ n: i + 1, text: t })) })),
-      probeNote: s.probeGroupsNote,
       questions: s.objections.map((q, i) => ({ ...q, n: i + 1, on: i === open ? 'on' : '', open: i === open, mark: i === open ? 'Less' : 'More', toggle: () => this.setState({ open: i === open ? -1 : i }) })),
       guard: s.guard,
       modalOpen: !!modal, modalName: modal?.name ?? '', modalKind: modal?.kind ?? '',
