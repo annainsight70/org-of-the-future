@@ -851,7 +851,10 @@ class Component extends DCLogic {
       React.createElement('svg', { viewBox: '0 0 24 24', width: s, height: s, fill: 'none', stroke: '#fff', strokeWidth: s <= 15 ? 2.1 : s <= 20 ? 1.95 : 1.75, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true, dangerouslySetInnerHTML: { __html: m.icons[icon] ?? m.icons.spark } }));
   }
   videoEl(src) {
-    return React.createElement('video', { controls: true, playsInline: true, preload: 'metadata' },
+    // The key forces a remount when the floor changes. Without it React reuses
+    // the same <video> node and only rewrites the <source> src, which browsers
+    // ignore, so the previous floor's clip keeps playing under the new label.
+    return React.createElement('video', { key: src, controls: true, playsInline: true, preload: 'metadata' },
       React.createElement('source', { src: src.replace(/\.mp4$/, '.webm'), type: 'video/webm' }),
       React.createElement('source', { src, type: 'video/mp4' }));
   }
