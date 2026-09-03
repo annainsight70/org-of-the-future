@@ -33,6 +33,13 @@
       }
     },
     {
+      "route": "/fonts/*",
+      "allowedRoles": ["seller"],
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
       "route": "/videos/*",
       "allowedRoles": ["seller"],
       "headers": {
@@ -56,6 +63,7 @@
     }
   },
   "mimeTypes": {
+    ".woff2": "font/woff2",
     ".webm": "video/webm",
     ".mp4": "video/mp4",
     ".svg": "image/svg+xml"
@@ -70,6 +78,7 @@
     "rewrite": "/seller.html",
     "exclude": [
       "/assets/*",
+      "/fonts/*",
       "/videos/*",
       "/photos/*",
       "/people/*",
